@@ -1,0 +1,13 @@
+{
+    "duedate": "Fecha de vencimiento",
+    "next30days": "Próximos 30 días",
+    "next3months": "Próximos 3 meses",
+    "next6months": "Próximos 6 meses",
+    "next7days": "Próximos 7 días",
+    "nocoursesinprogress": "Sin cursos en progreso",
+    "noevents": "No hay actividades próximas pendientes",
+    "overdue": "Atrasado",
+    "pluginname": "Linea de tiempo",
+    "sortbycourses": "Ordenar por cursos",
+    "sortbydates": "Ordenar por fechas"
+}

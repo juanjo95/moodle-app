@@ -1,0 +1,8 @@
+{
+    "deletecourse": "Offload all course data",
+    "deletecourses": "Offload all courses data",
+    "deletedatafrom": "Offload data from {{name}}",
+    "info": "Los archivos almacenados en su dispositivo hacen que la aplicación funcione más rápido y permiten que la aplicación se use sin conexión. Puede descargar archivos de forma segura si necesita liberar espacio de almacenamiento.",
+    "managestorage": "Administrar almacenamiento",
+    "storageused": "Almacenamiento utilizado:"
+}
