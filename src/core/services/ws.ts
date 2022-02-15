@@ -901,6 +901,7 @@ export class CoreWSProvider {
      * @return Resolved with the text when done.
      */
     async getText(url: string): Promise<string> {
+        
         // Fetch the URL content.
         const options: HttpRequestOptions = {
             method: 'get',
@@ -934,17 +935,23 @@ export class CoreWSProvider {
             // Use the cordova plugin.
             if (url.indexOf('file://') === 0) {
                 // We cannot load local files using the http native plugin. Use file provider instead.
-                const content = options.responseType == 'json' ?
-                    await CoreFile.readFile<T>(url, CoreFileFormat.FORMATJSON) :
-                    await CoreFile.readFile(url, CoreFileFormat.FORMATTEXT);
 
-                return new HttpResponse<T>({
-                    body: <T> content,
-                    headers: undefined,
-                    status: 200,
-                    statusText: 'OK',
-                    url,
-                });
+                try {
+                    const content = options.responseType == 'json' ?
+                        await CoreFile.readFile<T>(url, CoreFileFormat.FORMATJSON) :
+                        await CoreFile.readFile(url, CoreFileFormat.FORMATTEXT);
+
+                    return new HttpResponse<T>({
+                        body: <T> content['data'],
+                        headers: undefined,
+                        status: 200,
+                        statusText: 'OK',
+                        url,
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+
             }
 
             return NativeHttp.sendRequest(url, options).then((response) => new CoreNativeToAngularHttpResponse(response));

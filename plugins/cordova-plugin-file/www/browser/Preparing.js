@@ -107,7 +107,7 @@
     };
 
     function createFileEntryFunctions (fs) {
-        fs.root.getFile('todelete_658674_833_4_cdv', {create: true}, function (fileEntry) {
+        fs.root.getFile('todelete_658674_833_4_cdv', { create: true }, function (fileEntry) {
             var fileEntryType = Object.getPrototypeOf(fileEntry);
             var entryType = Object.getPrototypeOf(fileEntryType);
 
@@ -174,7 +174,7 @@
         console.log('Persistent fs quota granted');
         quotaWasRequested = true;
     }, function (e) {
-        console.log('Error occured while trying to request Persistent fs quota: ' + JSON.stringify(e));
+        console.log('Error occurred while trying to request Persistent fs quota: ' + JSON.stringify(e));
     });
 
     channel.onCordovaReady.subscribe(function () {

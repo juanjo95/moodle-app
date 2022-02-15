@@ -402,6 +402,8 @@ export class AddonCalendarEditEventPage implements OnInit, OnDestroy, CanLeave {
         if (!courseId) {
             return;
         }
+        
+        console.log('ok');
 
         const modal = await CoreDomUtils.showModalLoading();
 

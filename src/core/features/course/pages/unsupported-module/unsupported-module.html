@@ -10,11 +10,9 @@
 
         <ion-buttons slot="end">
             <core-context-menu>
-                <core-context-menu-item [priority]="900" *ngIf="module?.url" [href]="module!.url"
-                    [content]="'core.openinbrowser' | translate" iconAction="fas-external-link-alt">
+                <core-context-menu-item [priority]="900" *ngIf="module?.url" [href]="module!.url" [content]="'core.openinbrowser' | translate" iconAction="fas-external-link-alt">
                 </core-context-menu-item>
-                <core-context-menu-item [priority]="800" *ngIf="module?.description" [content]="'core.moduleintro' | translate"
-                    (action)="expandDescription()" iconAction="fas-arrow-right">
+                <core-context-menu-item [priority]="800" *ngIf="module?.description" [content]="'core.moduleintro' | translate" (action)="expandDescription()" iconAction="fas-arrow-right">
                 </core-context-menu-item>
             </core-context-menu>
         </ion-buttons>

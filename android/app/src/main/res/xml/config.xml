@@ -35,11 +35,6 @@
     <param name="android-package" value="org.apache.cordova.device.Device"/>
   </feature>
 
-  <feature name="File">
-    <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
-    <param name="onload" value="true"/>
-  </feature>
-
   <feature name="FileOpener2">
     <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2"/>
   </feature>
@@ -123,6 +118,11 @@
 
   <feature name="Diagnostic_External_Storage">
     <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage"/>
+    <param name="onload" value="true"/>
+  </feature>
+
+  <feature name="File">
+    <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
     <param name="onload" value="true"/>
   </feature>
 

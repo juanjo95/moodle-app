@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <h1>\n            <core-format-text [text]=\"title\" contextLevel=\"course\" [contextInstanceId]=\"course?.id\"></core-format-text>\n        </h1>\n\n        <ion-buttons slot=\"end\"></ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<core-tabs-outlet [tabs]=\"tabs\" [hideUntil]=\"loaded\" (ionChange)=\"tabSelected()\"></core-tabs-outlet>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-back-button [text]=\"'core.back' | translate\"></ion-back-button>\n        </ion-buttons>\n        <h1>\n            <core-format-text [text]=\"title\" contextLevel=\"course\" [contextInstanceId]=\"course?.id\"></core-format-text>\n        </h1>\n\n        <ion-buttons slot=\"end\"></ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<core-tabs-outlet [tabs]=\"tabs\" [hideUntil]=\"loaded\" (ionChange)=\"tabSelected()\"></core-tabs-outlet>");
 
 /***/ }),
 

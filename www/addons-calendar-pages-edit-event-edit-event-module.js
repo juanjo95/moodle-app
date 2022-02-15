@@ -432,6 +432,7 @@ let AddonCalendarEditEventPage = class AddonCalendarEditEventPage {
             if (!courseId) {
                 return;
             }
+            console.log('ok');
             const modal = yield _services_utils_dom__WEBPACK_IMPORTED_MODULE_7__["CoreDomUtils"].showModalLoading();
             try {
                 yield this.loadGroups(courseId);

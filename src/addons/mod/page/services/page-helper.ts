@@ -44,7 +44,7 @@ export class AddonModPageHelperProvider {
         // Extract the information about paths from the module contents.
         contents.forEach((content) => {
             const url = content.fileurl;
-
+    
             if (this.isMainPage(content)) {
                 // This seems to be the most reliable way to spot the index page.
                 indexUrl = url;
@@ -80,7 +80,7 @@ export class AddonModPageHelperProvider {
         }
 
         const content = await CoreWS.getText(url);
-
+        
         // Now that we have the content, we update the SRC to point back to the external resource.
         // That will be caught by core-format-text.
         return CoreDomUtils.restoreSourcesInHtml(content, paths);

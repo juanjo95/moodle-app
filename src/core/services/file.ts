@@ -27,6 +27,9 @@ import { CoreLogger } from '@singletons/logger';
 import { makeSingleton, File, Zip, Platform, WebView } from '@singletons';
 import { CoreFileEntry } from '@services/file-helper';
 
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+
+
 /**
  * Progress event used when writing a file data into a file.
  */
@@ -515,7 +518,10 @@ export class CoreFileProvider {
                     return parsed;
                 });
             default:
-                return File.readAsText(folder, path);
+                return Filesystem.readFile({
+                    path: `${folder}${path}`,
+                    encoding: Encoding.UTF8
+                });
         }
     }
 

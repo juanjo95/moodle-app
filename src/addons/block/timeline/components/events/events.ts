@@ -128,6 +128,8 @@ export class AddonBlockTimelineEventsComponent implements OnChanges {
         e.preventDefault();
         e.stopPropagation();
 
+        console.log('ok');
+
         // Fix URL format.
         url = CoreTextUtils.decodeHTMLEntities(url);
 

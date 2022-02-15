@@ -1047,26 +1047,23 @@ export class CoreCourseProvider {
      * @return Promise resolved when done.
      */
     async openCourse(course: CoreCourseAnyCourseData | { id: number }, params?: Params): Promise<void> {
-        await CoreCourseFormatDelegate.openCourse(<CoreCourseAnyCourseData> course, params);
-        //const loading = await CoreDomUtils.showModalLoading();
+        const loading = await CoreDomUtils.showModalLoading();
 
         // Wait for site plugins to be fetched.
         await CoreUtils.ignoreErrors(CoreSitePlugins.waitFetchPlugins());
-
+        
         if (!('format' in course) || typeof course.format == 'undefined') {
-            console.log(course.id);
             const result = await CoreCourseHelper.getCourse(course.id);
-
             course = result.course;
         }
-
+        
         const format = 'format' in course && `format_${course.format}`;
-
+        
         if (!format || !CoreSitePlugins.sitePluginPromiseExists(`format_${format}`)) {
             // No custom format plugin. We don't need to wait for anything.
-            //loading.dismiss();
+            loading.dismiss();
             await CoreCourseFormatDelegate.openCourse(<CoreCourseAnyCourseData> course, params);
-
+    
             return;
         }
 
@@ -1099,7 +1096,7 @@ export class CoreCourseProvider {
             await CoreDomUtils.showConfirm(message, '', reload, ignore);
             window.location.reload();
         } finally {
-            //loading.dismiss();
+            loading.dismiss();
         }
     }
 

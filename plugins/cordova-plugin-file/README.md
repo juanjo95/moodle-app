@@ -21,11 +21,9 @@ description: Read/write files on the device.
 #         under the License.
 -->
 
-|AppVeyor|Travis CI|
-|:-:|:-:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/github/apache/cordova-plugin-file?branch=master)](https://ci.appveyor.com/project/ApacheSoftwareFoundation/cordova-plugin-file)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-file.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-file)|
-
 # cordova-plugin-file
+
+[![Android Testsuite](https://github.com/apache/cordova-plugin-file/actions/workflows/android.yml/badge.svg)](https://github.com/apache/cordova-plugin-file/actions/workflows/android.yml) [![Chrome Testsuite](https://github.com/apache/cordova-plugin-file/actions/workflows/chrome.yml/badge.svg)](https://github.com/apache/cordova-plugin-file/actions/workflows/chrome.yml) [![iOS Testsuite](https://github.com/apache/cordova-plugin-file/actions/workflows/ios.yml/badge.svg)](https://github.com/apache/cordova-plugin-file/actions/workflows/ios.yml) [![Lint Test](https://github.com/apache/cordova-plugin-file/actions/workflows/lint.yml/badge.svg)](https://github.com/apache/cordova-plugin-file/actions/workflows/lint.yml)
 
 This plugin implements a File API allowing read/write access to files residing on the device.
 
@@ -49,9 +47,9 @@ To get a few ideas how to use the plugin, check out the [sample](#sample) at the
 For an overview of other storage options, refer to Cordova's
 [storage guide](http://cordova.apache.org/docs/en/latest/cordova/storage/storage.html).
 
-This plugin defines global `cordova.file` object.
+This plugin defines a global `cordova.file` object.
 
-Although in the global scope, it is not available until after the `deviceready` event.
+Although the object is in the global scope, it is not available to applications until after the `deviceready` event fires.
 
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
