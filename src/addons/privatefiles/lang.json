@@ -2,7 +2,7 @@
     "couldnotloadfiles": "The list of files could not be loaded.",
     "emptyfilelist": "No hay archivos que mostrar.",
     "erroruploadnotworking": "Unfortunately it is currently not possible to upload files to your site.",
-    "files": "Files",
+    "files": "Archivos",
     "privatefiles": "Archivos privados",
     "sitefiles": "Archivos del sitio"
 }

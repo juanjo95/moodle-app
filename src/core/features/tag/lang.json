@@ -7,12 +7,12 @@
     "noresultsfor": "No results for \"{{$a}}\"",
     "searchtags": "Buscar etiquetas",
     "showingfirsttags": "Showing {{$a}} most popular tags",
-    "tag": "Tag",
+    "tag": "Etiqueta",
     "tagareabadgedescription": "There are {{count}} items.",
     "tagarea_course": "Cursos",
     "tagarea_course_modules": "Activities and resources",
     "tagarea_post": "Blog posts",
     "tagarea_user": "User interests",
-    "tags": "Tags",
+    "tags": "Etiquetas",
     "warningareasnotsupported": "Some of the tag areas are not displayed because they are not supported by the app."
 }
