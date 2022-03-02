@@ -33,7 +33,7 @@ import { IonicModule } from '@ionic/angular';
         FormsModule,
         IonicModule,
         ReactiveFormsModule,
-        TranslateModule,
+        TranslateModule
     ],
 })
 export class CoreSharedModule {}

@@ -68,7 +68,7 @@ import { CoreXAPIModule } from './xapi/xapi.module';
         CoreStylesModule,
         CoreUserModule,
         CoreViewerModule,
-        CoreXAPIModule,
+        CoreXAPIModule
     ],
 })
 export class CoreFeaturesModule {}

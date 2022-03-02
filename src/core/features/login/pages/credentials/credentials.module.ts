@@ -18,6 +18,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreSharedModule } from '@/core/shared.module';
 import { CoreLoginCredentialsPage } from './credentials';
 
+import { CoreLoginSitePolicyPageModule } from '../site-policy/site-policy.module';
+
 const routes: Routes = [
     {
         path: '',
@@ -29,6 +31,7 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         CoreSharedModule,
+        //CoreLoginSitePolicyPageModule
     ],
     declarations: [
         CoreLoginCredentialsPage,

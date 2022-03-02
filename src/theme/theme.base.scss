@@ -1,14 +1,25 @@
 @import "./globals.scss";
-
 body {
     -webkit-text-size-adjust: auto;
 }
 
 // Common styles.
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 .clearfix {
     &:after {
         content: "";
@@ -29,30 +40,62 @@ body {
     }
 }
 
-.opacity-hide { opacity: 0; }
-.core-big   { font-size: 115%; }
-.invisible { visibility: hidden; }
+.opacity-hide {
+    opacity: 0;
+}
+
+.core-big {
+    font-size: 115%;
+}
+
+.invisible {
+    visibility: hidden;
+}
 
 .button-no-uppercase {
     text-transform: none;
 }
 
-.flex { display: flex; }
-.inline-block { display: inline-block; }
-.block { display: block; }
+.flex {
+    display: flex;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
 
 .flex-row {
     display: flex;
     flex-direction: row;
 }
 
-.margin-bottom-sm { margin-bottom: 8px; }
-.margin-bottom-md { margin-bottom: 12px; }
+.margin-bottom-sm {
+    margin-bottom: 8px;
+}
 
-.font-bold { font-weight: bold; }
-.font-italic { font-style: italic; }
-.font-lg { font-size: 1.7rem; }
-.font-sm { font-size: 1.2rem; }
+.margin-bottom-md {
+    margin-bottom: 12px;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.font-lg {
+    font-size: 1.7rem;
+}
+
+.font-sm {
+    font-size: 1.2rem;
+}
 
 // Headings.
 // Some styles taken from ion-label
@@ -63,46 +106,37 @@ body {
     --color: initial;
     color: var(--color);
     line-height: 20px;
-
     &.item-heading-secondary {
         --color: var(--subdued-text-color);
     }
 }
 
-.ios ion-label > p,
-.md ion-label > p {
+.ios ion-label>p,
+.md ion-label>p {
     --color: var(--subdued-text-color);
     color: var(--color);
 }
 
 .md ion-label .item-heading {
     @include margin(2px, 0);
-
     font-size: 16px;
     font-weight: normal;
-
     &.item-heading-secondary {
         @include margin(2px, 0);
-
         font-size: 14px;
         font-weight: normal;
-
         line-height: normal;
     }
 }
 
 .ios ion-label .item-heading {
     @include margin(0, 0, 2px);
-
     font-size: 17px;
     font-weight: normal;
-
     &.item-heading-secondary {
         @include margin(0, 0, 3px);
-
         font-size: 14px;
         font-weight: normal;
-
         line-height: normal;
     }
 }
@@ -120,7 +154,6 @@ ion-header h2 {
     white-space: nowrap;
     overflow: hidden;
     pointer-events: auto;
-
     .filter_mathjaxloader_equation div {
         display: inline !important;
     }
@@ -138,7 +171,6 @@ ion-app.ios ion-header h1,
 ion-app.ios ion-header h2 {
     @include position(0, null, null, 0);
     @include padding(0, 90px, 0);
-
     position: absolute;
     text-align: center;
     font-size: 17px;
@@ -148,17 +180,16 @@ ion-app.ios ion-header h2 {
     pointer-events: none;
 }
 
-
 // Correctly inherit ion-text-wrap onto labels.
-.item ion-label core-format-text .core-format-text-content > *,
-.fake-ion-item core-format-text .core-format-text-content > * {
+.item ion-label core-format-text .core-format-text-content>*,
+.fake-ion-item core-format-text .core-format-text-content>* {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.item.ion-text-wrap ion-label core-format-text .core-format-text-content > *,
-.fake-ion-item.ion-text-wrap core-format-text .core-format-text-content > * {
+.item.ion-text-wrap ion-label core-format-text .core-format-text-content>*,
+.fake-ion-item.ion-text-wrap core-format-text .core-format-text-content>* {
     white-space: normal;
 }
 
@@ -173,7 +204,7 @@ ion-button core-format-text .core-format-text-content {
     display: block;
 }
 
-ion-button > * {
+ion-button>* {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -185,8 +216,7 @@ ion-button.ion-text-wrap {
         white-space: normal;
         display: contents;
     }
-
-    & > * {
+    &>* {
         white-space: normal;
     }
 }
@@ -195,7 +225,8 @@ ion-button.button-outline {
     --background: var(--contrast-background);
 }
 
-@each $color-name, $value in $colors {
+@each $color-name,
+$value in $colors {
     .text-#{$color-name},
     p.text-#{$color-name} {
         color: var(--ion-color-#{$color-name});
@@ -213,22 +244,18 @@ ion-header ion-toolbar {
         --color: var(--core-header-toolbar-color);
         --ion-toolbar-color: var(--core-header-toolbar-color);
     }
-
     .button.button-clear,
     .button.button-solid {
         --background: transparent;
         --color: var(--core-header-toolbar-color);
         --ion-color-primary: var(--core-header-toolbar-color);
     }
-
     .button.button-clear.button-has-icon-only,
     .button.button-solid.button-has-icon-only {
         --border-radius: 50%;
         width: 48px;
         height: 48px;
     }
-
-
     .core-navbar-button-hidden {
         display: none !important;
     }
@@ -237,7 +264,6 @@ ion-header ion-toolbar {
 // Ionic icon.
 ion-icon {
     position: relative;
-
     &.icon-slash::after,
     &.icon-backslash::after {
         content: " ";
@@ -250,12 +276,10 @@ ion-icon {
         -webkit-mask: url("/assets/fonts/font-awesome/solid/slash.svg") no-repeat 50% 50%;
         mask: url("/assets/fonts/font-awesome/solid/slash.svg") no-repeat 50% 50%;
     }
-
     &.icon-slash::after {
         -webkit-transform: scale(-1, 1);
         transform: scale(-1, 1);
     }
-
     &.fa-fw {
         text-align: center;
         width: 1.25em;
@@ -283,8 +307,6 @@ ion-button.button-clear {
 [role="button"],
 .clickable {
     cursor: pointer;
-
-
     [disabled],
     [aria-disabled="true"] {
         cursor: default;
@@ -322,7 +344,6 @@ button.as-link {
     font-size: inherit;
 }
 
-
 // Ionic alert.
 ion-alert.core-alert-network-error .alert-head,
 div.core-iframe-network-error {
@@ -330,7 +351,6 @@ div.core-iframe-network-error {
     content: " ";
     background: url("/assets/fonts/font-awesome/solid/wifi.svg") no-repeat 50% 50%;
     margin: 25px auto;
-
     &::after {
         content: " ";
         position: absolute;
@@ -378,6 +398,7 @@ ion-list.list-md {
 ion-tabs.hide-header ion-header {
     display: none;
 }
+
 ion-toolbar {
     ion-spinner {
         margin: 10px;
@@ -387,7 +408,10 @@ ion-toolbar {
 // Modals.
 .core-modal-fullscreen .modal-wrapper {
     position: absolute;
-    @include position(0 !important, null, null, 0 !important);
+    @include position(0 !important,
+    null,
+    null,
+    0 !important);
     display: block;
     width: 100% !important;
     height: 100% !important;
@@ -399,10 +423,12 @@ ion-toolbar {
 
 @media only screen and (min-height: 400px) and (min-width: 300px) {
     .core-modal-lateral {
-
         .modal-wrapper {
             position: absolute;
-            @include position(0 !important, 0 !important, 0 !important, unset !important);
+            @include position(0 !important,
+            0 !important,
+            0 !important,
+            unset !important);
             display: block;
             height: 100% !important;
             width: auto;
@@ -458,14 +484,12 @@ ion-toolbar {
 }
 
 // Card styles
-@each $color-name, $base in $colors {
-
+@each $color-name,
+$base in $colors {
     // Message cards.
     ion-card.core-#{$color-name}-card {
         --color-base: var(--ion-color-#{$color-name});
-
         border-bottom: 3px solid var(--color-base);
-
         ion-item {
             --inner-border-width: 0;
         }
@@ -476,10 +500,8 @@ ion-toolbar {
             color: var(--color-base);
         }
     }
-
     .item.core-#{$color-name}-item {
         --color-base: var(--ion-color-#{$color-name});
-
         --border-width: 0 0 3px 0;
         --border-color: var(--color-base);
         --inner-border-width: 0;
@@ -487,7 +509,6 @@ ion-toolbar {
             color: var(--color-base);
         }
     }
-
     ion-icon.ion-color-#{$color-name} {
         --ion-color-base: var(--ion-color-#{$color-name});
         color: var(--ion-color-base);
@@ -506,7 +527,7 @@ img.large-avatar,
     max-width: var(--core-large-avatar-size);
     max-height: var(--core-large-avatar-size);
     margin-bottom: 10px;
-    border-radius : 50%;
+    border-radius: 50%;
     padding: 4px;
     border: 1px solid var(--gray);
     background-color: transparent;
@@ -517,7 +538,8 @@ ion-avatar.large-avatar {
     height: var(--core-large-avatar-size);
 }
 
-ion-avatar ion-img, ion-avatar img {
+ion-avatar ion-img,
+ion-avatar img {
     text-indent: -99999px;
     background-color: var(--gray-light);
 }
@@ -573,7 +595,6 @@ ion-toolbar h1 .core-bar-button-image img {
         -webkit-filter: drop-shadow(0px 3px 6px rgba(var(--drop-shadow)));
         filter: drop-shadow(0px 3px 6px rgba(var(--drop-shadow)));
     }
-
     .action-sheet-title {
         border-bottom: 2px solid var(--title-border-color);
     }
@@ -583,7 +604,6 @@ ion-toolbar h1 .core-bar-button-image img {
     .action-sheet-title {
         font-size: 16px;
     }
-
     .action-sheet-title {
         border-bottom: 2px solid var(--title-border-color);
     }
@@ -611,7 +631,6 @@ input[type=radio] {
 .ios ion-radio {
     width: var(--size);
     height: var(--size);
-
     &::part(container) {
         margin: 0px;
         border-radius: var(--border-radius);
@@ -619,7 +638,6 @@ input[type=radio] {
         border-style: var(--border-style);
         border-color: var(--color);
     }
-
     &::part(mark) {
         border-radius: var(--inner-border-radius);
         width: calc(50% + var(--outer-border-width));
@@ -629,13 +647,11 @@ input[type=radio] {
         background: var(--contrast-background);
         border: 0 !important;
     }
-
     &.radio-checked {
         &::part(container) {
             border-color: var(--color-checked);
             background: var(--color-checked);
         }
-
         &::part(mark) {
             transform: scale3d(1, 1, 1);
         }
@@ -690,7 +706,8 @@ ion-searchbar {
     cursor: pointer;
 }
 
-.core-anchor, core-format-text a {
+.core-anchor,
+core-format-text a {
     color: var(--core-link-color);
     cursor: pointer;
     text-decoration: underline;
@@ -700,9 +717,11 @@ core-block ion-item-divider .core-button-spinner {
     display: flex;
     align-items: center;
     @include margin-horizontal(10px);
-
     ion-badge.core-course-download-courses-progress {
-        @include margin(null, 12px, null, null);
+        @include margin(null,
+        12px,
+        null,
+        null);
     }
 }
 
@@ -722,7 +741,7 @@ core-block ion-item-divider .core-button-spinner {
 
 // Monospaced font.
 .core-monospaced {
-    font-family: Andale Mono,Monaco,Courier New,DejaVu Sans Mono,monospace;
+    font-family: Andale Mono, Monaco, Courier New, DejaVu Sans Mono, monospace;
 }
 
 .core-iframe-offline-disabled {
@@ -730,12 +749,15 @@ core-block ion-item-divider .core-button-spinner {
 }
 
 .core-scanning-qr {
-    .ion-page, .modal-wrapper {
+    .ion-page,
+    .modal-wrapper {
         background-color: transparent !important;
         --background: transparent;
     }
-
-    ion-content, ion-backdrop, ion-modal:not(.core-modal-fullscreen), ion-tabs {
+    ion-content,
+    ion-backdrop,
+    ion-modal:not(.core-modal-fullscreen),
+    ion-tabs {
         display: none !important;
     }
 }
@@ -748,7 +770,10 @@ core-block ion-item-divider .core-button-spinner {
 // Different levels of padding.
 @for $i from 0 through 15 {
     .core-padding-#{$i} {
-        @include padding(null, null, null, 15px * $i + 16px);
+        @include padding(null,
+        null,
+        null,
+        15px * $i+16px);
     }
 }
 
@@ -798,42 +823,47 @@ div.fake-ion-item {
     text-decoration: none;
     overflow: hidden;
     box-sizing: border-box;
-
 }
 
 html.md div.fake-ion-item {
     font-size: 16px;
     font-weight: normal;
     text-transform: none;
-    @include padding(null, 16px, null, 16px);
-    @include margin(11px, null, 10px, null);
-
+    @include padding(null,
+    16px,
+    null,
+    16px);
+    @include margin(11px,
+    null,
+    10px,
+    null);
     h1 {
-        @include margin(0, 0, 2px);
+        @include margin(0,
+        0,
+        2px);
         font-size: 24px;
         font-weight: normal;
     }
-
     h2 {
-        @include margin(2px, 0);
+        @include margin(2px,
+        0);
         font-size: 16px;
         font-weight: normal;
     }
-
     h3,
     h4,
     h5,
     h6 {
-        @include margin(2px, 0);
-
+        @include margin(2px,
+        0);
         font-size: 14px;
         font-weight: normal;
-
         line-height: normal;
     }
-
     p {
-        @include margin(0, 0, 2px);
+        @include margin(0,
+        0,
+        2px);
         font-size: 14px;
         line-height: 20px;
         text-overflow: inherit;
@@ -843,39 +873,48 @@ html.md div.fake-ion-item {
 
 html.ios div.fake-ion-item {
     font-size: 14px;
-    @include padding(null, 10px, null, 20px);
-    @include margin(10px, 8px, 10px, null);
-
+    @include padding(null,
+    10px,
+    null,
+    20px);
+    @include margin(10px,
+    8px,
+    10px,
+    null);
     h1 {
-        @include margin(3px, 0, 2px);
+        @include margin(3px,
+        0,
+        2px);
         font-size: 22px;
         font-weight: normal;
     }
-
     h2 {
-        @include margin(0, 0, 2px);
+        @include margin(0,
+        0,
+        2px);
         font-size: 17px;
         font-weight: normal;
     }
-
     h3,
     h4,
     h5,
     h6 {
-        @include margin(0, 0, 3px);
+        @include margin(0,
+        0,
+        3px);
         font-size: 14px;
         font-weight: normal;
         line-height: normal;
     }
-
     p {
-        @include margin(0, 0, 2px 0);
+        @include margin(0,
+        0,
+        2px 0);
         font-size: 14px;
         line-height: normal;
         text-overflow: inherit;
         overflow: inherit;
     }
-
 }
 
 // Disabled items.
@@ -894,22 +933,18 @@ ion-item.hide-detail {
 @media (hover: hover) {
     ion-item.item-multiple-inputs:hover::part(native) {
         color: var(--color-hover);
-
         &::after {
             background: var(--background-hover);
             opacity: var(--background-hover-opacity);
         }
     }
-
     ion-item.ion-color.item-multiple-inputs:hover::part(native) {
         color: #{current-color(contrast)};
-
         &::after {
             background: #{current-color(contrast)};
         }
     }
 }
-
 
 // It fixes the click on links where ion-ripple-effect is present.
 // Make links clickable when inside radio or checkbox items. Pointer and cursor part.
@@ -919,15 +954,22 @@ ion-item.ion-activatable:not(.only-links) {
     ion-label {
         z-index: 3;
         pointer-events: none;
-
-        ion-anchor, a,
-        ion-button, button,
-        audio, video, select, input, iframe {
+        ion-anchor,
+        a,
+        ion-button,
+        button,
+        audio,
+        video,
+        select,
+        input,
+        iframe {
             pointer-events: visible;
         }
     }
-
-    ion-checkbox, ion-datetime, ion-radio, ion-select{
+    ion-checkbox,
+    ion-datetime,
+    ion-radio,
+    ion-select {
         position: static;
     }
 }
@@ -969,7 +1011,8 @@ ion-item.item-input ion-input.has-focus {
         opacity: revert;
         z-index: revert;
     }
-    .item-highlight, .item-inner-highlight {
+    .item-highlight,
+    .item-inner-highlight {
         position: unset;
     }
 }
@@ -980,7 +1023,11 @@ ion-item.item-input ion-input.has-focus {
     outline: none;
 }
 
-textarea, button, select, input, a {
+textarea,
+button,
+select,
+input,
+a {
     &:focus {
         @include core-focus-style();
         outline: none;
@@ -995,7 +1042,8 @@ ion-modal:focus-visible {
 }
 
 ion-input .native-input {
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
         box-shadow: none;
         outline: none;
     }

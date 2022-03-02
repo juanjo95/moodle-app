@@ -17,6 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CoreSharedModule } from '@/core/shared.module';
 import { CoreLoginSitePolicyPage } from './site-policy';
+import { CoreLoginCredentialsPageModule } from '../credentials/credentials.module';
 
 const routes: Routes = [
     {
@@ -28,11 +29,14 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forChild(routes),
-        CoreSharedModule,
+        CoreSharedModule
     ],
     declarations: [
         CoreLoginSitePolicyPage,
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule,
+        //CoreLoginSitePolicyPage
+    ],
 })
 export class CoreLoginSitePolicyPageModule {}

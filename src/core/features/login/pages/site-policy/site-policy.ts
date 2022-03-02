@@ -42,10 +42,13 @@ export class CoreLoginSitePolicyPage implements OnInit {
      */
     ngOnInit(): void {
 
+        /* console.log('1');
+
         this.siteId = CoreNavigator.getRouteParam('siteId');
         this.currentSite = CoreSites.getCurrentSite();
 
         if (!this.currentSite) {
+            console.log('2');
             // Not logged in, stop.
             this.cancel();
 
@@ -57,12 +60,13 @@ export class CoreLoginSitePolicyPage implements OnInit {
 
         if (this.siteId != currentSiteId || !this.currentSite.wsAvailable('core_user_agree_site_policy')) {
             // Not current site or WS not available, stop.
+            console.log('3');
             this.cancel();
 
             return;
         }
 
-        this.fetchSitePolicy();
+        this.fetchSitePolicy(); */
     }
 
     /**

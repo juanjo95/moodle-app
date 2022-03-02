@@ -88,6 +88,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
         this.credForm = this.fb.group({
             username: [CoreNavigator.getRouteParam<string>('username') || '', Validators.required],
             password: ['', Validators.required],
+            policy: [, Validators.required]
         });
 
         this.treatSiteConfig();
@@ -218,6 +219,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
         const siteUrl = this.siteUrl;
         const username = this.credForm.value.username;
         const password = this.credForm.value.password;
+        const policy = this.credForm.value.policy;
 
         if (!this.siteChecked || this.isBrowserSSO) {
             // Site wasn't checked (it failed) or a previous check determined it was SSO. Let's check again.
@@ -241,6 +243,11 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
 
             return;
         }
+        if (!policy) {
+            CoreDomUtils.showErrorModal('Debes aceptar las politicas del sitio', true);
+
+            return;
+        }
 
         if (!CoreApp.isOnline()) {
             CoreDomUtils.showErrorModal('core.networkerrormsg', true);
@@ -259,6 +266,7 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
             // Reset fields so the data is not in the view anymore.
             this.credForm.controls['username'].reset();
             this.credForm.controls['password'].reset();
+            this.credForm.controls['policy'].reset();
 
             this.siteId = id;
 
@@ -334,5 +342,12 @@ export class CoreLoginCredentialsPage implements OnInit, OnDestroy {
         CoreEvents.trigger(CoreEvents.LOGIN_SITE_UNCHECKED, { config: this.siteConfig }, this.siteId);
         this.valueChangeSubscription?.unsubscribe();
     }
+
+    abrirPoliticas(){
+        const text = `<h3 class="text-center">Politicas de privacidad</h3>
+        <p class="text-justify">Lorem Ipsum es simplemente un texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde la década de 1500, cuando un impresor desconocido tomó una galera de tipos y la codificó para hacer un libro de muestras tipográficas. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición tipográfica electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de hojas de Letraset que contenían pasajes de Lorem Ipsum y, más recientemente, con software de autoedición como Aldus PageMaker, que incluía versiones de Lorem Ipsum.</p>`;
+        CoreDomUtils.showAlertTranslated("Politicas privacidad",text,'Cerrar');
+    }
+
 
 }

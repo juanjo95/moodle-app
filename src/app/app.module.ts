@@ -57,7 +57,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         }),
         AppRoutingModule,
         CoreModule,
-        AddonsModule,
+        AddonsModule
     ],
     providers: [
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
